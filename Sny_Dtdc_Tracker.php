@@ -99,31 +99,33 @@ class Sny_Dtdc_Tracker{
 
         curl_setopt_array($this -> curl, $summary_curl_config);
         $result = curl_exec($this -> curl);
-
+        print_r($result);
         $this -> html -> load($result);
 
-        $e              = $this -> html -> find("table",1);
-        $summary_header = $e ->children(0)->children(0);
-        $summary_body   = $e ->children(1)->children(0);
+        $e = $this -> html -> find("table",1);
 
-        $no             = $summary_header -> children(0)->innertext;
-        $status         = $summary_header -> children(1) -> innertext;
-        $datetime         = $summary_header -> children(2) -> innertext;
-        $location         = $summary_header -> children(3) -> innertext;
+        if(!empty($e)){
+            $summary_header = $e ->children(0)->children(0);
+            $summary_body   = $e ->children(1)->children(0);
 
-        $no_value             = $summary_body -> children(0)->plaintext;
-        $status_value         = $summary_body -> children(1) -> innertext;
-        $datetime_value         = $summary_body -> children(2) -> innertext;
-        $location_value         = $summary_body -> children(3) -> innertext;
+            $no             = $summary_header -> children(0)->innertext;
+            $status         = $summary_header -> children(1) -> innertext;
+            $datetime         = $summary_header -> children(2) -> innertext;
+            $location         = $summary_header -> children(3) -> innertext;
 
-        $this -> summary = array(
-            $no => $no_value,
-            $status => $status_value,
-            $datetime => $datetime_value,
-            $location => $location_value);
+            $no_value             = $summary_body -> children(0)->plaintext;
+            $status_value         = $summary_body -> children(1) -> innertext;
+            $datetime_value         = $summary_body -> children(2) -> innertext;
+            $location_value         = $summary_body -> children(3) -> innertext;
+
+            $this -> summary = array(
+                $no => $no_value,
+                $status => $status_value,
+                $datetime => $datetime_value,
+                $location => $location_value);
 
 
-
+        }
         curl_close($this -> curl);
 
     }
