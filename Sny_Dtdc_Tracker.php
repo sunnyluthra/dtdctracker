@@ -128,5 +128,5 @@ class Sny_Dtdc_Tracker{
 
     }
 }
-$dtdc = new Sny_Dtdc_Tracker('X02147203');
+$dtdc = new Sny_Dtdc_Tracker(TRACKING ID);
 var_dump($dtdc -> summary);
