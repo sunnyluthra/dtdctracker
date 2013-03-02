@@ -2,7 +2,7 @@ dtdctracker
 ===========
 
 <h1>Integrate DTDC tracker in your site</h1>
-
+<a href="http://www.mrova.com/?p=1191">http://www.mrova.com/?p=1191</a>
 <h3>How To Use?</h3>
 
 inlcude('Sny_Dtdc_Tracker.php');<br/>
