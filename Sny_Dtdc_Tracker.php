@@ -24,8 +24,6 @@
  * 1. PHP :)
  * 2. CURL
  */
-
-
 include(dirname(__FILE__) . '/simple_html_dom.php');
 
 class Sny_Dtdc_Tracker{
