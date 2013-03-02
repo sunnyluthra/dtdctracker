@@ -36,7 +36,7 @@
  * @author Rus Carroll
  * @version 1.5 ($Rev: 202 $)
  * @package PlaceLocalInclude
- * @subpackage simple_html_dom
+ * @subpackage simple_html_dom 
  */
 
 /**
